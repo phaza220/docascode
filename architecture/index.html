@@ -331,6 +331,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#product-feature-selection-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Product Feature Selection Flow
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -414,6 +425,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#product-feature-selection-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Product Feature Selection Flow
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -450,6 +472,29 @@
 
     Retry --&gt; EnterPassword
     Register --&gt; Success</code></pre>
+<h2 id="product-feature-selection-flow">Product Feature Selection Flow<a class="headerlink" href="#product-feature-selection-flow" title="Permanent link">&para;</a></h2>
+<pre class="mermaid"><code>flowchart TD
+    Start([Start Feature Selection]) --&gt; CheckUser{Is user premium?}
+
+    %% Premium users
+    CheckUser --&gt;|Yes| FeatureA[Enable Advanced Analytics]
+    FeatureA --&gt; FeatureB[Enable Collaboration Tools]
+    FeatureB --&gt; CheckIntegration{Integrations needed?}
+    CheckIntegration --&gt;|Yes| Integration[Connect 3rd-party APIs]
+    CheckIntegration --&gt;|No| DonePremium([Premium setup complete])
+    Integration --&gt; DonePremium
+
+    %% Free users
+    CheckUser --&gt;|No| FeatureC[Enable Basic Analytics]
+    FeatureC --&gt; FeatureD[Enable Notifications]
+    FeatureD --&gt; CheckUpgrade{Want to upgrade?}
+    CheckUpgrade --&gt;|Yes| Upgrade[Upgrade to Premium]
+    CheckUpgrade --&gt;|No| DoneFree([Basic setup complete])
+    Upgrade --&gt; FeatureA
+
+    %% End states
+    DonePremium --&gt; End([End])
+    DoneFree --&gt; End</code></pre>
 
 
 

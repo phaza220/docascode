@@ -9,10 +9,8 @@
       
       
       
-        <link rel="prev" href="../getting-started/">
+        <link rel="prev" href="../api/">
       
-      
-        <link rel="next" href="../api/">
       
       
         
@@ -23,7 +21,7 @@
     
     
       
-        <title>Architecture - Docs as Code</title>
+        <title>REQ - Docs as Code</title>
       
     
     
@@ -64,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#architecture" class="md-skip">
+        <a href="#req-001" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -100,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Architecture
+              REQ
             
           </span>
         </div>
@@ -247,37 +245,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Architecture
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
         
   
   
@@ -293,59 +264,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Содержание">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Содержание
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#system-overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        System overview
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#system-overview-2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        System overview 2
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#product-feature-selection-flow" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Product Feature Selection Flow
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -381,10 +299,19 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../requirements/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -400,6 +327,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -424,47 +352,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Содержание
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#system-overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        System overview
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#system-overview-2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        System overview 2
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#product-feature-selection-flow" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Product Feature Selection Flow
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -480,48 +367,14 @@
 
 
 
-<h1 id="architecture">Architecture<a class="headerlink" href="#architecture" title="Permanent link">&para;</a></h1>
-<h2 id="system-overview">System overview<a class="headerlink" href="#system-overview" title="Permanent link">&para;</a></h2>
-<pre class="mermaid"><code>flowchart LR
-    User --&gt; Frontend
-    Frontend --&gt; Backend
-    Backend --&gt; Database</code></pre>
-<h2 id="system-overview-2">System overview 2<a class="headerlink" href="#system-overview-2" title="Permanent link">&para;</a></h2>
+<h1 id="req-001">Требование REQ-001<a class="headerlink" href="#req-001" title="Permanent link">&para;</a></h1>
 <pre class="mermaid"><code>flowchart TD
-    Start([Start]) --&gt; CheckLogin{User has account?}
+    REQ[REQ-001\nUser Authentication]
+    ARCH[Authentication Architecture]
 
-    CheckLogin --&gt;|Yes| EnterPassword[Enter Password]
-    CheckLogin --&gt;|No| Register[Register new account]
+    REQ --&gt; ARCH
 
-    EnterPassword --&gt; CheckPass{Password correct?}
-    CheckPass --&gt;|Yes| Success([Login Success])
-    CheckPass --&gt;|No| Retry[Retry Login]
-
-    Retry --&gt; EnterPassword
-    Register --&gt; Success</code></pre>
-<h2 id="product-feature-selection-flow">Product Feature Selection Flow<a class="headerlink" href="#product-feature-selection-flow" title="Permanent link">&para;</a></h2>
-<pre class="mermaid"><code>flowchart TD
-    Start([Start Feature Selection]) --&gt; CheckUser{Is user premium?}
-
-    %% Premium users
-    CheckUser --&gt;|Yes| FeatureA[Enable Advanced Analytics]
-    FeatureA --&gt; FeatureB[Enable Collaboration Tools]
-    FeatureB --&gt; CheckIntegration{Integrations needed?}
-    CheckIntegration --&gt;|Yes| Integration[Connect 3rd-party APIs]
-    CheckIntegration --&gt;|No| DonePremium([Premium setup complete])
-    Integration --&gt; DonePremium
-
-    %% Free users
-    CheckUser --&gt;|No| FeatureC[Enable Basic Analytics]
-    FeatureC --&gt; FeatureD[Enable Notifications]
-    FeatureD --&gt; CheckUpgrade{Want to upgrade?}
-    CheckUpgrade --&gt;|Yes| Upgrade[Upgrade to Premium]
-    CheckUpgrade --&gt;|No| DoneFree([Basic setup complete])
-    Upgrade --&gt; FeatureA
-
-    %% End states
-    DonePremium --&gt; End([End])
-    DoneFree --&gt; End</code></pre>
+    click ARCH "../architecture/" "Open Architecture page"</code></pre>
 
 
 

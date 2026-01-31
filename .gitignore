@@ -1,0 +1,9 @@
+# MkDocs
+site/
+
+# Python
+__pycache__/
+*.pyc
+
+# IntelliJ IDEA
+.idea/
